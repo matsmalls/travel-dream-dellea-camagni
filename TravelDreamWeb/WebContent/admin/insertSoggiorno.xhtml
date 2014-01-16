@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<h:head>
+<title>Travel Dream - Inserimento Soggiorno</title>
+</h:head>
+<h:body>
+	Inserisci i dettagli del soggiorno.
+	<h:form>
+		<h:panelGrid columns="3" id = "regGrid">
+			<tr>
+				<td><h:outputLabel for="nome">Nome:</h:outputLabel></td>
+				<td><h:inputText id="nome" value="#{productInsertBean.product.nome}" /></td>
+				<td><h:message for="nome"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="prezzo">Prezzo:</h:outputLabel></td>
+				<td><h:inputText id="prezzo" value="#{productInsertBean.product.prezzo}" /></td>
+				<td><h:message for="prezzo"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="descrizione">Descrizione:</h:outputLabel></td>
+				<td><h:inputText id="descrizione" value="#{productInsertBean.product.descrizione}"></h:inputText></td>
+				<td><h:message for="descrizione"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="data_arrivo">Data arrivo:</h:outputLabel></td>
+				<td><h:inputText id="data_arrivo" value="#{productInsertBean.product.data_arrivo}" /></td>
+				<td><h:message for="data_arrivo"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="data_partenza">Data partenza:</h:outputLabel></td>
+				<td><h:inputText id="data_partenza" value="#{productInsertBean.product.data_partenza}" /></td>
+				<td><h:message for="data_partenza"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="luogo">Luogo:</h:outputLabel></td>
+				<td><h:inputText id="luogo" value="#{productInsertBean.product.luogo}" /></td>
+				<td><h:message for="luogo"></h:message></td>
+			</tr>
+		</h:panelGrid>
+
+		<h:commandButton value="Inserisci prodotto" action="#{productInsertBean.registerSoggiorno()}" />
+
+	</h:form>
+</h:body>
+</html>

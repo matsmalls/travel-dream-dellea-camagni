@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<h:head>
+<title>Travel Dream - Inserimento Prodotto</title>
+</h:head>
+<body>
+Scegli il tipo di prodotto che vuoi inserire. <br />
+<h:form>
+	<h:selectOneMenu value="#{selectionBean.string}"> 
+		<f:selectItem itemValue = "insertVolo" itemLabel = "Volo" />
+		<f:selectItem itemValue = "insertSoggiorno" itemLabel = "Soggiorno" />
+		<f:selectItem itemValue = "insertEscursione" itemLabel = "Escursione" />
+		<f:selectItem itemValue = "insertPacchetto" itemLabel = "Pacchetto" />
+	</h:selectOneMenu>
+	<br/>
+	<h:commandButton value="Continua" action="#{selectionBean.redirect()}" />
+</h:form>
+</body>
+</html>
