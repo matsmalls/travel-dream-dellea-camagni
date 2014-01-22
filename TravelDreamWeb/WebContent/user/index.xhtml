@@ -10,6 +10,14 @@
 <h:body>
 Benvenuto nella tua homepage #{userBean.nome}!
 <br />
+Inserisci il nome o parte del nome del prodotto che vuoi cercare. <br />
+<h:form>
+	<h:inputText id="ricerca" value = "#{searchBean.ricerca}"> 
+		
+	</h:inputText>
+	<br/>
+	<h:commandButton value="Cerca" action="#{searchBean.redirect}" />
+</h:form>
 <h:form>
 	<h:commandButton action="#{logoutBean.logout}" value="Logout" />
 </h:form>
