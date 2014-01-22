@@ -3,13 +3,59 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
-<h:head>
-<title>Travel Dream</title>
-</h:head>
-<body>
-Benvenuti! <br />
-<h:link outcome="admin/index.xhtml"  value="Login amministratori" /> 
-<br />
-<h:link outcome="user/index?user=true"  value="Login utenti" />
-</body>
+	<h:head>
+		<title>Travel Dream</title>
+		<style type="text/css">
+			@import url("travel.css");
+    	</style>
+	</h:head>
+
+	<h:body>
+
+		<div>
+		
+			<div id='landmark'>			
+			  	<div id='linkContainer'>
+			  		<li><a href="">Pacchetti</a></li>
+				</div>
+				<div id='linkContainer'>
+					<li><a href="">Prodotti</a></li>
+				</div>
+				<div id='linkContainer'>
+					<li><a href="">Wishing-List</a></li>
+				</div>
+				<div id='linkContainer'>
+			  		<li><a href="">Carrello</a></li>
+				</div>
+				<div id='linkContainer'>
+			  		<li><a href="">Contatti</a></li>
+				</div>
+				<div id='linkContainer'>
+			  		<li><a href="">Chi Siamo</a></li>
+				</div>		
+			</div>
+  	
+  	
+  	
+			<div id='logoContainer'>
+				<img src="C:\Users\matteo\Desktop\hyper\siti\html\company-logo.jpg" width="180" height="150" />
+			</div>
+  	
+  			<div id='headerContainer'>
+  				<form>
+  					<fieldset>
+  						<legend>Autenticazione</legend>
+  						Username: <input type="text"></input>
+   						Password: <input type="text"></input>
+  					</fieldset>
+  				</form>
+  			</div>
+  			
+			<h:link outcome="admin/index.xhtml"  value="Login amministratori">mio</h:link>
+			<br />
+			<h:link outcome="user/index?user=true"  value="Login utenti">monster</h:link>
+		</div>
+
+
+	</h:body>
 </html>

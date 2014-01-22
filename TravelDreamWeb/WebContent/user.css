@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+@charset "utf-8";
+/* CSS Document */
+
+	#boxModificaProfiloContainer
+	{
+		position: absolute;
+		top:  200px;
+		left: 300px;
+		width: 600px;
+		
+	}
