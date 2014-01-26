@@ -38,22 +38,24 @@
   	
   	
 			<div id='logoContainer'>
-				<img src="C:\Users\matteo\Desktop\hyper\siti\html\company-logo.jpg" width="180" height="150" />
+				<img src="images\koala.jpg" width="180" height="150" />
 			</div>
   	
   			<div id='headerContainer'>
-  				<form>
-  					<fieldset>
-  						<legend>Autenticazione</legend>
-  						Username: <input type="text"></input>
-   						Password: <input type="text"></input>
-  					</fieldset>
-  				</form>
+  				Inserisci il codice del pacchetto che sei stato invitato a visualizzare! <br />
+			<h:form>
+				<h:inputText id="ricerca" value = "#{searchBean.ricerca}"> 
+		
+				</h:inputText>
+				<br/>
+					<h:commandButton value="Cerca" action="showRicercaUserP" />
+				</h:form>
+
   			</div>
   			
-			<h:link outcome="admin/index.xhtml"  value="Login amministratori">mio</h:link>
+			<h:link outcome="admin/index.xhtml"  value="Login amministratori"></h:link>
 			<br />
-			<h:link outcome="user/index?user=true"  value="Login utenti">monster</h:link>
+			<h:link outcome="user/index?user=true"  value="Login utenti"></h:link>
 		</div>
 
 

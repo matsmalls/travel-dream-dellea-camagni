@@ -4,6 +4,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import travelDream.ejb.eaos.*;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
+
 import travelDream.ejb.model.*;
 
 @ManagedBean(name="registerBean")
@@ -30,6 +32,15 @@ public class RegisterBean {
 	public String register(){
 		usrMgr.register(user);
 		return "home?faces-redirect-true";
+	}
+	
+	public String modifica(){
+		usrMgr.modifica(user);
+		return "index";
+	}
+	
+	public UserDTO findUser(){
+		return usrMgr.getUserDTO();
 	}
 	
 	

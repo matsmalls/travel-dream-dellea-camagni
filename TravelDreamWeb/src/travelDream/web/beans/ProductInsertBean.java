@@ -29,6 +29,10 @@ public class ProductInsertBean {
 		this.product = product;
 		}
 		
+		public void elimina(){
+			productMgr.elimina(product);
+		}
+		
 		public String registerVolo(){
 			productMgr.registerVolo(product);
 			return "home?faces-redirect-true";
@@ -43,6 +47,12 @@ public class ProductInsertBean {
 			productMgr.registerSoggiorno(product);
 			return "home?faces-redirect-true";
 		}
+		
+		public String registerPacchetto(){
+			productMgr.registerPacchetto(product);
+			return "home?faces-redirect-true";
+		}
+		
 		
 		
 }

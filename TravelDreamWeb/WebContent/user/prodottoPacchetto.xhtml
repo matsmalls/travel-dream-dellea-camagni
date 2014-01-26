@@ -5,18 +5,27 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<title>Dettagli Prodotto</title>
+<title>Dettagli Prodotto - Pacchetto</title>
 </h:head>
 <h:body>
 Nome prodotto: #{wishlistBean.product.nome}.
+<br />
 Id Prodotto: #{wishlistBean.id}.
 <br />
+Tipo Prodotto: Pacchetto
+<br />
 <h:form>
-<h:commandButton id="add"
-                                     action = "#{wishlistBean.save()}" 
-                                     value="Aggiungi in wishlist">
-           
-                    </h:commandButton>
+	<h:commandButton id="modifica"
+                     action = "#{wishlistBean.modifica()}" 
+                     value="Modifica Pacchetto">
+    </h:commandButton>
+</h:form>
+<br />
+<h:form>
+	<h:commandButton id="add"
+                     action = "#{wishlistBean.save()}" 
+                     value="Aggiungi in wishlist">
+    </h:commandButton>
 </h:form>
 </h:body>
 </html>

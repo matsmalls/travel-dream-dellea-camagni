@@ -10,7 +10,7 @@
 <h:body>
 <h:form>
 <h:dataTable id="products"
-                         value="#{tableBean.productsDTO}"
+                         value="#{tableBean.allProductsDTO}"
                          var="productDTO"
                          headerClass="list-header"
                          styleClass="list-background"
@@ -23,14 +23,8 @@
                         <h:outputText value="Nome Prodotto"/>
                     </f:facet>
                     <h:commandLink
-                    			   action = "#{wishlistBean.redirect}"
+                    			   
                                    value="#{productDTO.nome}">
-                        <f:setPropertyActionListener target="#{wishlistBean.id}" 
-                                                     value="#{productDTO.id}"/>
-                        <f:setPropertyActionListener target="#{wishlistBean.product}" 
-                                                     value="#{productDTO}"/>
-                        <f:setPropertyActionListener target="#{wishlistBean.tipo}" 
-                                                     value="#{productDTO.tipo}"/>
                                                      
                     </h:commandLink>
                 </h:column>
@@ -44,18 +38,28 @@
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Prezzo"/>
+                        <h:outputText value="Elimina"/>
                     </f:facet>
-                    <h:outputText value="#{productDTO.prezzo}" >
-                        <f:convertNumber currencySymbol="$" type="currency"/>
-                    </h:outputText>
+                    <h:commandLink
+                    			   action = "#{productInsertBean.elimina()}"
+                                   value="Elimina">
+                        <f:setPropertyActionListener target="#{productInsertBean.product}" 
+                                                     value="#{productDTO}"/>
+                                                     
+                    </h:commandLink>
                 </h:column>
 	
 				<h:column>
                     <f:facet name="header">
-                        <h:outputText value="Descrizione"/>
+                        <h:outputText value="Modifica"/>
                     </f:facet>
-                    <h:outputText value="#{productDTO.descrizione}"/>
+                    <h:commandLink
+                    			   action = "#{productInsertBean.elimina()}"
+                                   value="Modifica">
+                        <f:setPropertyActionListener target="#{productInsertBean.product}" 
+                                                     value="#{productDTO}"/>
+                                                     
+                    </h:commandLink>
                 </h:column>
 
             </h:dataTable>

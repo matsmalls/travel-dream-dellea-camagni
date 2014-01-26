@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+       
+	<h:head>
+		<title>Travel Dream</title>
+		<style type="text/css">
+			@import url("travel.css");
+			@import url("user.css");
+    	</style>
+	</h:head>
+
+	<h:body>
+		
+		<div>
+		
+			<div id='landmark'>			
+			  	<div id='linkContainer'><li><a href="">Pacchetti</a></li></div>
+				<div id='linkContainer'><li><a href="">Prodotti</a></li></div>
+				<div id='linkContainer'><li><a href="">Wishing-List</a></li></div>
+				<div id='linkContainer'><li><a href="">Carrello</a></li></div>
+				<div id='linkContainer'><li><a href="">Contatti</a></li></div>
+				<div id='linkContainer'><li><a href="">Chi Siamo</a></li></div>	
+			</div>
+  		
+			<div id='logoContainer'>
+				<img src="images7/koala.jpg" width="180" height="150" />
+			</div>
+  	
+  			<div id='boxModificaProfiloContainer'>
+  				
+  				<h:form>
+		<h:panelGrid columns="3" id = "regGrid">
+			<tr>
+				<td><h:outputLabel for="nome">Nome:</h:outputLabel></td>
+				<td><h:inputText id="nome" value="#{registerBean.user.nome}" /></td>
+				<td><h:message for="nome"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="cognome">Last name:</h:outputLabel></td>
+				<td><h:inputText id="cognome" value="#{registerBean.user.cognome}" /></td>
+				<td><h:message for="cognome"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="userId">Username:</h:outputLabel></td>
+				<td><h:inputText id="userId" value="#{registerBean.user.userId}"></h:inputText></td>
+				<td><h:message for="userId"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="email">Email:</h:outputLabel></td>
+				<td><h:inputText id="email" value="#{registerBean.user.email}" /></td>
+				<td><h:message for="email"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="password">Password:</h:outputLabel></td>
+				<td><h:inputText id="password" value="#{registerBean.user.password}" /></td>
+				<td><h:message for="password"></h:message></td>
+			</tr>
+		</h:panelGrid>
+
+		<h:commandButton value="Conferma Modifiche" action="#{registerBean.modifica()}" >
+		
+		</h:commandButton>
+
+	</h:form>
+  				</div>
+  			
+			</div>
+
+
+	</h:body>
+</html>

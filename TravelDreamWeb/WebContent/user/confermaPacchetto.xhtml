@@ -5,18 +5,17 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<title>Dettagli Prodotto</title>
+<title>Conferma Pacchetto</title>
 </h:head>
 <h:body>
-Nome prodotto: #{wishlistBean.product.nome}.
-Id Prodotto: #{wishlistBean.id}.
+Il pacchetto è stato inserito nella tua wishlist! 
+<br/>
+CODICE:  #{wishlistBean.id}
 <br />
-<h:form>
-<h:commandButton id="add"
-                                     action = "#{wishlistBean.save()}" 
-                                     value="Aggiungi in wishlist">
-           
-                    </h:commandButton>
-</h:form>
+Usa il codice sopra riportato per visualizzare il tuo pacchetto dalla home, e dallo ai tuoi amici per permettere loro di vedere il tuo viaggio!
+<br />
+Inserendo questo codice potranno visualizzare la tua futura vacanza e decidere di unirsi a te!
+
+
 </h:body>
 </html>

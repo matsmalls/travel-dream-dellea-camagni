@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<h:head>
+<title>Travel Dream - Inserimento Pacchetto</title>
+</h:head>
+<h:body>
+	Inserisci i dettagli del pacchetto.
+	<h:form>
+		<h:panelGrid columns="3" id = "regGrid">
+			<tr>
+				<td><h:outputLabel for="nome">Nome:</h:outputLabel></td>
+				<td><h:inputText id="nome" value="#{wishlistBean.product.nome}" /></td>
+				<td><h:message for="nome"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="prezzo">Prezzo:</h:outputLabel></td>
+				<td><h:outputLabel id="prezzo" value="#{wishlistBean.prezzo()}" /></td>
+				<td><h:message for="prezzo"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="soggiorno">Soggiorno:</h:outputLabel></td>
+				<td><h:selectOneMenu id= "soggiorno" value="#{wishlistBean.product.cod_soggiorno}"> 
+						<f:selectItems value = "#{tableBean.soggiorno}" />
+						 <f:ajax event="keyup" render="prezzo" listener="#{wishlistBean.foo}"/>
+					</h:selectOneMenu></td>
+				<td><h:message for="soggiorno"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="escursione">Escursione:</h:outputLabel></td>
+				<td><h:selectOneMenu id ="escursione" value="#{wishlistBean.product.cod_escursione}"> 
+						<f:selectItems value = "#{tableBean.escursione}" />
+						<f:ajax event="keyup" render="prezzo" listener="#{wishlistBean.foo}"/>
+					</h:selectOneMenu></td>
+				<td><h:message for="escursione"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="volo">Volo:</h:outputLabel></td>
+				<td><h:selectOneMenu id="volo" value="#{wishlistBean.product.cod_volo}"> 
+						<f:selectItems value = "#{tableBean.volo}" />
+						<f:ajax event="keyup" render="prezzo" listener="#{wishlistBean.foo}"/>
+					</h:selectOneMenu></td>
+				<td><h:message for="volo"></h:message></td>
+			</tr>
+		</h:panelGrid>
+
+		<h:commandButton value="Inserisci in wishlist!" action="#{wishlistBean.modificaPacchetto()}">
+		<f:setPropertyActionListener target="#{wishlistBean.id}" 
+                                     value="#{wishlistBean.getUserPId()}"/>
+        
+		</h:commandButton>
+
+	</h:form>
+</h:body>
+</html>
