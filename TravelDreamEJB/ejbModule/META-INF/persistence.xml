@@ -4,6 +4,7 @@
 		<jta-data-source>jdbc/TravelDreamDB</jta-data-source>
 		<class>travelDream.ejb.eaos.Product</class>
 		<class>travelDream.ejb.eaos.User</class>
+		<class>travelDream.ejb.eaos.Wishlist</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables"/>
 			<property name="URL" value="localhost:3306/TravelDreamDB"></property>

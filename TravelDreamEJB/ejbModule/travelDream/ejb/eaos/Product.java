@@ -50,6 +50,22 @@ public class Product{
 		super();
 	}
 	
+	public static ProductDTO convertToDTO(Product product){
+		ProductDTO local = new ProductDTO();
+		local.setId(product.getId());
+		local.setNome(product.getNome());
+		local.setPrezzo(product.getPrezzo());
+		local.setTipo(product.getTipo().name());
+		local.setDescrizione(product.getDescrizione());
+		local.setAerop_andata(product.getAerop_andata());
+		local.setAerop_ritorno(product.getAerop_ritorno());
+		local.setLuogo(product.getLuogo());
+		local.setCod_volo(product.getCod_volo());
+		local.setCod_soggiorno(product.getCod_soggiorno());
+		local.setCod_escursione(product.getCod_escursione());
+		return local;
+	}
+	
 	public Product(ProductDTO product){
 		this.nome = product.getNome();
 		this.prezzo = product.getPrezzo();

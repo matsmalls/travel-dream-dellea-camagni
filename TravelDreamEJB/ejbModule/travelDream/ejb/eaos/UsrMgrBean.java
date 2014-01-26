@@ -38,6 +38,13 @@ public class UsrMgrBean implements UsrMgr {
    }
    
    @Override
+   public void modifica(UserDTO user){
+	   User newUser = new User(user);
+	   em.merge(newUser);
+	   
+   }
+   
+   @Override
    public UserDTO getUserDTO(){
 	   UserDTO userDTO = convertToDTO(find(getPrincipalUser()));
 	   return userDTO;
