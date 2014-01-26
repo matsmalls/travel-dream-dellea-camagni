@@ -1,7 +1,6 @@
 package travelDream.ejb.model;
 
 
-
 public class ProductDTO {
 	private Long id;
 	
@@ -24,6 +23,7 @@ public class ProductDTO {
 	private Long cod_volo;
 	private Long cod_soggiorno;
 	private Long cod_escursione;
+	
 	
 	public Long getId() {
 		return id;

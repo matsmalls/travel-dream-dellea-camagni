@@ -8,5 +8,6 @@ import travelDream.ejb.model.*;
 public interface UsrMgr {
 	public void register(UserDTO user);
 	public UserDTO getUserDTO();
+	public void modifica(UserDTO user);
 	
 }
