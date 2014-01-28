@@ -35,6 +35,20 @@ public class ProductMgrBean implements ProductMgr {
     }
     
     @Override
+    public String modificaEscursione(ProductDTO product){
+    	
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();
+       newProduct.setNome(product.getNome());
+       newProduct.setTipo(Tipologia.escursione);
+  	   newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()+" 00:00:00"));
+  	   newProduct.setDescrizione(product.getDescrizione());
+  	   newProduct.setPrezzo(product.getPrezzo());
+  	   newProduct.setLuogo(product.getLuogo());
+ 	   em.merge(newProduct);
+ 	   return "index";
+ 	  
+    }
+    @Override
     public void registerVolo(ProductDTO product){
  	   Product newProduct = new Product(product);
  	   newProduct.setTipo(Tipologia.volo);
@@ -42,6 +56,21 @@ public class ProductMgrBean implements ProductMgr {
  	   newProduct.setData_partenza(Timestamp.valueOf(product.getData_partenza()));
  	   em.persist(newProduct);
  	   
+    }
+    
+    @Override
+    public String modificaVolo(ProductDTO product){
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();       newProduct.setTipo(Tipologia.volo);
+       newProduct.setNome(product.getNome());
+       newProduct.setDescrizione(product.getDescrizione());
+  	   newProduct.setPrezzo(product.getPrezzo());
+  	   newProduct.setAerop_andata(product.getAerop_andata());
+  	   newProduct.setAerop_ritorno(product.getAerop_ritorno());
+ 	   newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()));
+ 	   newProduct.setData_partenza(Timestamp.valueOf(product.getData_partenza()));
+ 	   em.merge(newProduct);
+ 	   return "index";
+ 	  
     }
     
     @Override
@@ -53,6 +82,7 @@ public class ProductMgrBean implements ProductMgr {
     public void registerSoggiorno(ProductDTO product){
  	   Product newProduct = new Product(product);
  	   newProduct.setTipo(Tipologia.soggiorno);
+ 	  newProduct.setId( product.getId());
  	   newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()+" 00:00:00"));
  	   newProduct.setData_partenza(Timestamp.valueOf(product.getData_partenza()+" 00:00:00"));
  	   em.persist(newProduct);
@@ -60,8 +90,23 @@ public class ProductMgrBean implements ProductMgr {
     }
     
     @Override
+    public String modificaSoggiorno(ProductDTO product){
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();       
+       newProduct.setTipo(Tipologia.soggiorno);
+       newProduct.setNome(product.getNome());
+       newProduct.setDescrizione(product.getDescrizione());
+  	   newProduct.setPrezzo(product.getPrezzo());
+  	   newProduct.setLuogo(product.getLuogo());
+ 	   newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()+" 00:00:00"));
+ 	   newProduct.setData_partenza(Timestamp.valueOf(product.getData_partenza()+" 00:00:00"));
+ 	   em.merge(newProduct);
+ 	   
+ 	   return "index";
+    }
+    
+    @Override
     public void elimina(ProductDTO product){
-    	Product newProduct = new Product(product);
+    	Product newProduct = em.find(Product.class, product.getId());
     	em.remove(newProduct);
     }
     
@@ -71,6 +116,18 @@ public class ProductMgrBean implements ProductMgr {
  	   newProduct.setTipo(Tipologia.pacchetto);
  	   em.persist(newProduct);
  	   
+    }
+    
+    @Override
+    public String modificaPacchetto(ProductDTO product){
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();       newProduct.setTipo(Tipologia.pacchetto);
+ 	   newProduct.setNome(product.getNome());
+ 	   newProduct.setPrezzo(product.getPrezzo());
+ 	   newProduct.setCod_escursione(product.getCod_escursione());
+ 	   newProduct.setCod_soggiorno(product.getCod_soggiorno());
+ 	   newProduct.setCod_volo(product.getCod_volo());
+       em.merge(newProduct);
+ 	   return "modificaPacchetto";
     }
     
     @Override
@@ -177,5 +234,7 @@ public class ProductMgrBean implements ProductMgr {
     	}
     	return local;	
     }
+    
+  
     
 }

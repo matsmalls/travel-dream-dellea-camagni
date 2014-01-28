@@ -28,18 +28,34 @@ public class UsrMgrBean implements UsrMgr {
    private EJBContext context;
    
    @Override
-   public void register(UserDTO user){
+   public void register(UserDTO user)throws Exception{
 	   User newUser = new User(user);
 	   List<Group> groups = new ArrayList<Group>();
 	   groups.add(Group.user);
 	   newUser.setGroups(groups);
+	   newUser.setPassword(SecurityBean.convert(user.getPassword()));
 	   em.persist(newUser);
 	   
    }
    
    @Override
-   public void modifica(UserDTO user){
+   public void registerAdmin(UserDTO user)throws Exception{
 	   User newUser = new User(user);
+	   List<Group> groups = new ArrayList<Group>();
+	   groups.add(Group.admin);
+	   newUser.setGroups(groups);
+	   newUser.setPassword(SecurityBean.convert(user.getPassword()));
+	   em.persist(newUser);
+	   
+   }
+   
+   @Override
+   public void modifica(UserDTO user)throws Exception{
+	   User newUser = new User(user);
+	   List<Group> groups = new ArrayList<Group>();
+	   groups.add(Group.user);
+	   newUser.setGroups(groups);
+	   newUser.setPassword(SecurityBean.convert(user.getPassword()));
 	   em.merge(newUser);
 	   
    }

@@ -44,6 +44,12 @@ public class WishlistMgrBean implements WishlistMgr {
     }
     
     @Override
+    public void elimina(WishlistDTO wishlist){
+    	Wishlist newWishlist = em.find(Wishlist.class, wishlist.getId());
+    	em.remove(newWishlist);
+    }
+    
+    @Override
     public List<WishlistDTO> findWishlist(String user){
     	List<Wishlist> tmp = em.createQuery(
     	        "SELECT w FROM Wishlist w WHERE w.user = :user", Wishlist.class)
