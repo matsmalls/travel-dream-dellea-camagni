@@ -32,11 +32,12 @@
 	#landmark
 	{
 	font-family: "Lucida Calligraphy";
+	
 	border-top: 1px solid #666;
 	border-style:solid;
 	position: absolute;
 	top: 210px;
-	left: +20px;
+	left: 0px;
 	height: 280px;
 	width: 160px;
 	}
