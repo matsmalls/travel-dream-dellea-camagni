@@ -36,4 +36,12 @@ public interface ProductMgr {
 	public int calcolaPrezzo(int volo, int soggiorno, int escursione);
 
 	public void elimina(ProductDTO product);
+	
+	public String modificaSoggiorno(ProductDTO product);
+	
+	public String modificaVolo(ProductDTO product);
+	
+	public String modificaEscursione(ProductDTO product);
+	
+	public String modificaPacchetto(ProductDTO product);
 }

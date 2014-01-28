@@ -10,4 +10,5 @@ import travelDream.ejb.model.WishlistDTO;
 public interface WishlistMgr {
 	public void save(WishlistDTO wishlist);
 	public List<WishlistDTO> findWishlist(String user);
+	public void elimina(WishlistDTO wishlist);
 }
