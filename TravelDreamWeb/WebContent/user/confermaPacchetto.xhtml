@@ -5,17 +5,23 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<title>Conferma Pacchetto</title>
+	<title>Conferma Pacchetto</title>
+	<style type="text/css">
+			
+			@import url("../travel.css");
+			@import url("../user.css");
+    </style>
 </h:head>
 <h:body>
-Il pacchetto è stato inserito nella tua wishlist! 
-<br/>
-CODICE:  #{wishlistBean.id}
-<br />
-Usa il codice sopra riportato per visualizzare il tuo pacchetto dalla home, e dallo ai tuoi amici per permettere loro di vedere il tuo viaggio!
-<br />
-Inserendo questo codice potranno visualizzare la tua futura vacanza e decidere di unirsi a te!
-
-
+<ui:include src="../header.xhtml"/>
+		<div id='boxUserContainer'>
+		Il pacchetto Ã¨ stato inserito nella tua wishlist! 
+		<br/>
+		CODICE:  #{wishlistBean.id}
+		<br />
+		Usa il codice sopra riportato per visualizzare il tuo pacchetto dalla home, e dallo ai tuoi amici per permettere loro di vedere il tuo viaggio!
+		<br />
+		Inserendo questo codice potranno visualizzare la tua futura vacanza e decidere di unirsi a te!
+		</div>
 </h:body>
 </html>
