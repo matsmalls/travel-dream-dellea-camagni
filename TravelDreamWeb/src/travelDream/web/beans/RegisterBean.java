@@ -29,18 +29,23 @@ public class RegisterBean {
 	this.user = user;
 	}
 	
-	public String register(){
+	public String register()throws Exception{
 		usrMgr.register(user);
-		return "home?faces-redirect-true";
+		return "index";
 	}
 	
-	public String modifica(){
+	public String modifica()throws Exception{
 		usrMgr.modifica(user);
 		return "index";
 	}
 	
 	public UserDTO findUser(){
 		return usrMgr.getUserDTO();
+	}
+	
+	public String registerAdmin()throws Exception{
+		usrMgr.registerAdmin(user);
+		return "index";
 	}
 	
 	

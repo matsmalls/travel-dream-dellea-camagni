@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3" id = "regGrid">
+			<tr>
+				<td><h:outputLabel for="nome">Nome:</h:outputLabel></td>
+				<td><h:inputText id="nome" value="#{registerBean.user.nome}" /></td>
+				<td><h:message for="nome"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="cognome">Last name:</h:outputLabel></td>
+				<td><h:inputText id="cognome" value="#{registerBean.user.cognome}" /></td>
+				<td><h:message for="cognome"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="userId">Username:</h:outputLabel></td>
+				<td><h:inputText id="userId" value="#{registerBean.user.userId}"></h:inputText></td>
+				<td><h:message for="userId"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="email">Email:</h:outputLabel></td>
+				<td><h:inputText id="email" value="#{registerBean.user.email}" /></td>
+				<td><h:message for="email"></h:message></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="password">Password:</h:outputLabel></td>
+				<td><h:inputText id="password" value="#{registerBean.user.password}" /></td>
+				<td><h:message for="password"></h:message></td>
+			</tr>
+		</h:panelGrid>
+
+		<h:commandButton value="Registrami" action="#{registerBean.registerAdmin()}" />
+
+	</h:form>
+</h:body>
+</html>

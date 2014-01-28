@@ -40,6 +40,11 @@ public class WishlistBean {
         return (productDTO);
     }
 	
+	public String elimina(){
+		wishlistMgr.elimina(wishlist);
+		return "wishlist?deleted=true";
+	}
+	
 	public WishlistBean(){
 		productDTO = new ProductDTO();
 		wishlist = new WishlistDTO();
@@ -121,6 +126,14 @@ public class WishlistBean {
 		wishlistMgr.save(wishlist);
 		productMgr.registerUserP(productDTO);
 		return "confermaPacchetto";
+	}
+
+	public WishlistDTO getWishlist() {
+		return wishlist;
+	}
+
+	public void setWishlist(WishlistDTO wishlist) {
+		this.wishlist = wishlist;
 	}
 	
 	

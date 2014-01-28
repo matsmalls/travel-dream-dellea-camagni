@@ -30,7 +30,19 @@
                                                      
                     </h:commandLink>
                 </h:column>
-
+			
+			<h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Elimina"/>
+                    </f:facet>
+                    <h:commandLink
+                    			   action = "#{wishlistBean.elimina()}"
+                                   value="Elimina">
+                        <f:setPropertyActionListener target="#{wishlistBean.wishlist}" 
+                                                     value="#{wishlistDTO}"/>
+                                                     
+                    </h:commandLink>
+                </h:column>
 
             </h:dataTable>
                                 
