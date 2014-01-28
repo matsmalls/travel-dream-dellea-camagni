@@ -7,9 +7,15 @@
 
 <h:head>
 	<title>Login Error</title>
+	<style type="text/css">
+			@import url("travel.css");
+			@import url("user.css");
+    </style>
 </h:head>
 <h:body>
+<ui:include src="header.xhtml" />
+<div id='boxUserContainer'>
 Errore, torna alla pagina iniziale!
-<h:link value="Login" outcome="index" />
+<h:link value="Login" outcome="index" /></div>
 </h:body>
 </html>

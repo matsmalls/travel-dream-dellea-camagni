@@ -2,11 +2,32 @@
 @charset "utf-8";
 /* CSS Document */
 
-	#boxModificaProfiloContainer
+	#boxUserContainer
 	{
 		position: absolute;
-		top:  200px;
+		top:  210px;
 		left: 300px;
 		width: 600px;
+		height: 600px;
+
+	}
+	#boxUserImageBackground
+	{
+		position: absolute;
+		top:  240px;
+		left: 200px;
+		width: 600px;
+		height: 140px;
+	
 		
 	}
+	td.celleStrette
+	{
+		width: 100px;
+	}
+	td.celleLarghe
+	{
+		width: 150px;
+	}
+
+	

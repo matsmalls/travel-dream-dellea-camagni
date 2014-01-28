@@ -8,8 +8,27 @@
 	font-family: "Lucida Calligraphy";
 	font-size: 10pt;
 	color: black;
-	}
-	
+	/*background-image:url(images/prenotazione_imag.jpg);
+	background-repeat: no-repeat;
+   	background-position: Center;*/
+   	}
+
+/*	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#sfondo{
+	position:absolute;
+	height:100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	visibility: collapse;
+}
+*/
 	#landmark
 	{
 	font-family: "Lucida Calligraphy";
@@ -27,13 +46,13 @@
 		padding-left: 10px;
 		padding-bottom: 5px;
 		width: 180px;
-		height: 150px;
+		height: 150px; 
 	}
 	
 	#linkContainer
 	{
 		padding:	0cm 0cm 0cm 0cm;
-		margin:		10px 0px 0px 15px;  <!-- top, dx, bottom, sx -->
+		margin:		10px 0px 0px 30px;  <!-- top, dx, bottom, sx -->
 	}
 	
 	#headerContainer
@@ -42,28 +61,4 @@
 		top:	50px;
 		right: +200px;
 	
-	}
-	
-	
-	#p3
-	{
-	font-family: "Century Schoolbook";
-	position: absolute;
-	top: 210px;
-	right: +200px;
-	left: 243px;
-	width: 111px;
-	height: 50px;
-	}
-	
-	div.sottotitolo
-	{
-	font-family: "Century Schoolbook";
-	color: #000;
-	position: absolute;
-	top: 291px;
-	right: +200px;
-	left: 1px;
-	width: 289px;
-	height: 32px;
 	}

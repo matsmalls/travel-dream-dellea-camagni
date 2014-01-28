@@ -5,18 +5,24 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<title>Ricerca</title>
+	<title>Ricerca</title>
+	<style type="text/css">
+			@import url("travel.css");
+			@import url("user.css");
+    </style>
 </h:head>
 <h:body>
-<h:form>
-<h:dataTable id="products"
-                         value="#{tableBean.userP}"
+	<ui:include src="header.xhtml" />
+	<div id='boxUserContainer' style=" height : 295px;">
+				<br /><br /><br />
+				<h:form>
+					<h:dataTable id="products"     
+						 value="#{tableBean.userP}"
                          var="productDTO"
                          headerClass="list-header"
                          styleClass="list-background"
                          rowClasses="list-row-even, list-row-odd"
                          border="1">
-  
 
                 <h:column>
                     <f:facet name="header">
@@ -54,5 +60,6 @@
             </h:dataTable>
                                 
             </h:form>
+  			</div>
            </h:body>
 </html>

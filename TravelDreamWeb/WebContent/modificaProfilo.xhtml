@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+        
+       
+	<h:head>
+		<title>Travel Dream</title>
+		<style type="text/css">
+			@import url("travel.css");
+			@import url("user.css");
+    	</style>
+	</h:head>
+
+	<h:body>
+	<ui:include src="header.xhtml" />		
+  			<div id='boxUserContainer' style=" height : 295px;">
+  					 	
+  					 	<h:panelGrid columns="1"  id = "regGrid" >
+							<tr>
+								<td style=" width : 147px;"><h:outputLabel value="Name" /></td>
+								<td style=" width : 10px;"></td>
+								<td><h:outputLabel value="Surname: *" /></td>
+							</tr>
+							<tr>
+								<td ><h:inputText value="" readonly="true" /></td>
+								<td style=" width : 10px;"></td>
+								<td ><h:inputText value="" readonly="true" /></td>
+							</tr>
+							<tr>
+								<td style=" width : 147px;"><h:outputLabel value="Username"></h:outputLabel></td>
+								<td style=" width : 10px;"></td>
+								<td ><h:outputLabel value="Vecchia Password" /></td>
+							</tr>
+							<tr>
+								<td><h:inputText value="" readonly="true" />  </td>
+								<td style=" width : 10px;"></td>
+								<td><h:inputText id="nuovapassword" value="" label="nuovapassword" /></td>
+							</tr>
+							<tr>
+								<td style=" width : 147px;"><h:outputLabel value="Nuova Password" /></td>
+								<td style=" width : 10px;"></td>
+								<td><h:outputLabel value="Conferma Password" /></td>
+							</tr>
+							<tr>
+								<td><h:inputText id="vecchiapassword" value="" label="vecchiapassword" /></td>
+								<td style=" width : 10px;"></td>
+								<td><h:inputText id="confermapassword" value="" label="confermapassword" /></td>
+							</tr>
+						</h:panelGrid>
+  					 	
+
+						<f:facet name="footer">  
+    				    	<h:commandButton type="button" value="Save" icon="ui-icon-check" style="margin-left:260px;"/>  
+						</f:facet>  
+    		</div>
+  		
+	</h:body>
+</html>
