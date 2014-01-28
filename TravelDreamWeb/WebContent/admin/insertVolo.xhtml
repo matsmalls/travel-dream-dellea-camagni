@@ -5,43 +5,51 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 <h:head>
 <title>Travel Dream - Inserimento Volo</title>
+		<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+    	</style>
 </h:head>
 <h:body>
+
+<ui:include src="../header.xhtml"/>
+<div id='boxUserContainer'>
+
 	Inserisci i dettagli del volo aereo.
 	<h:form>
-		<h:panelGrid columns="3" id = "regGrid">
+		<h:panelGrid columns="1" id = "regGrid">
 			<tr>
-				<td><h:outputLabel for="nome">Nome:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="nome">Nome:</h:outputLabel></td>
 				<td><h:inputText id="nome" value="#{productInsertBean.product.nome}" /></td>
 				<td><h:message for="nome"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="prezzo">Prezzo:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="prezzo">Prezzo:</h:outputLabel></td>
 				<td><h:inputText id="prezzo" value="#{productInsertBean.product.prezzo}" /></td>
 				<td><h:message for="prezzo"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="descrizione">Descrizione:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="descrizione">Descrizione:</h:outputLabel></td>
 				<td><h:inputText id="descrizione" value="#{productInsertBean.product.descrizione}"></h:inputText></td>
 				<td><h:message for="descrizione"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="data_arrivo">Data andata:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="data_arrivo">Data andata:</h:outputLabel></td>
 				<td><h:inputText id="data_arrivo" value="#{productInsertBean.product.data_arrivo}" /></td>
 				<td><h:message for="data_arrivo"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="data_partenza">Data ritorno:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="data_partenza">Data ritorno:</h:outputLabel></td>
 				<td><h:inputText id="data_partenza" value="#{productInsertBean.product.data_partenza}" /></td>
 				<td><h:message for="data_partenza"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="aerop_andata">Aeroporto Andata:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="aerop_andata">Aeroporto Andata:</h:outputLabel></td>
 				<td><h:inputText id="aerop_andata" value="#{productInsertBean.product.aerop_andata}" /></td>
 				<td><h:message for="aerop_andata"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="aerop_ritorno">Aeroporto Ritorno:</h:outputLabel></td>
+				<td class="celleLarghe"><h:outputLabel for="aerop_ritorno">Aeroporto Ritorno:</h:outputLabel></td>
 				<td><h:inputText id="aerop_ritorno" value="#{productInsertBean.product.aerop_ritorno}" /></td>
 				<td><h:message for="aerop_ritorno"></h:message></td>
 			</tr>
@@ -49,6 +57,6 @@
 
 		<h:commandButton value="Inserisci prodotto" action="#{productInsertBean.registerVolo()}" />
 
-	</h:form>
+	</h:form></div>
 </h:body>
 </html>

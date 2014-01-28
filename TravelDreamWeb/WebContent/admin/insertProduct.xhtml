@@ -5,9 +5,16 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 <h:head>
 <title>Travel Dream - Inserimento Prodotto</title>
+		<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+    	</style>
 </h:head>
 <body>
-Scegli il tipo di prodotto che vuoi inserire. <br />
+<ui:include src="../header.xhtml"/>
+<div id='boxUserContainer'>
+
+Scegli il tipo di prodotto che vuoi inserire. <br /><br />
 <h:form>
 	<h:selectOneMenu value="#{selectionBean.string}"> 
 		<f:selectItem itemValue = "insertVolo" itemLabel = "Volo" />
@@ -15,8 +22,7 @@ Scegli il tipo di prodotto che vuoi inserire. <br />
 		<f:selectItem itemValue = "insertEscursione" itemLabel = "Escursione" />
 		<f:selectItem itemValue = "insertPacchetto" itemLabel = "Pacchetto" />
 	</h:selectOneMenu>
-	<br/>
-	<h:commandButton value="Continua" action="#{selectionBean.redirect()}" />
-</h:form>
+	<h:commandButton value="Continua" action="#{selectionBean.redirect()}" style="margin-left:45px;"/>
+</h:form></div>
 </body>
 </html>

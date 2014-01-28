@@ -5,38 +5,45 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 <h:head>
 <title>Travel Dream - Inserimento Pacchetto</title>
+		<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+    	</style>
 </h:head>
 <h:body>
+<ui:include src="../header.xhtml"/>    	
+  			<div id='boxUserContainer'>
+
 	Inserisci i dettagli del pacchetto.
 	<h:form>
-		<h:panelGrid columns="3" id = "regGrid">
+		<h:panelGrid columns="1" id = "regGrid">
 			<tr>
-				<td><h:outputLabel for="nome">Nome:</h:outputLabel></td>
-				<td><h:inputText id="nome" value="#{productInsertBean.product.nome}" /></td>
+				<td class="celleStrette"><h:outputLabel for="nome">Nome:</h:outputLabel></td>
+				<td><h:inputText id="nome" value="#{productInsertBean.product.nome}" style=" width : 170px;"/></td>
 				<td><h:message for="nome"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="prezzo">Prezzo:</h:outputLabel></td>
-				<td><h:inputText id="prezzo" value="#{productInsertBean.product.prezzo}" /></td>
+				<td class="celleStrette"><h:outputLabel for="prezzo">Prezzo:</h:outputLabel></td>
+				<td><h:inputText id="prezzo" value="#{productInsertBean.product.prezzo}" style=" width : 170px;"/></td>
 				<td><h:message for="prezzo"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="soggiorno">Soggiorno:</h:outputLabel></td>
-				<td><h:selectOneMenu id= "soggiorno" value="#{productInsertBean.product.cod_soggiorno}"> 
+				<td class="celleStrette"><h:outputLabel for="soggiorno">Soggiorno:</h:outputLabel></td>
+				<td><h:selectOneMenu id= "soggiorno" value="#{productInsertBean.product.cod_soggiorno}" style=" width : 170px;"> 
 						<f:selectItems value = "#{tableBean.soggiorno}" />
 					</h:selectOneMenu></td>
 				<td><h:message for="soggiorno"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="escursione">Escursione:</h:outputLabel></td>
-				<td><h:selectOneMenu id ="escursione" value="#{productInsertBean.product.cod_escursione}"> 
+				<td class="celleStrette"><h:outputLabel for="escursione">Escursione:</h:outputLabel></td>
+				<td><h:selectOneMenu id ="escursione" value="#{productInsertBean.product.cod_escursione}" style=" width : 170px;"> 
 						<f:selectItems value = "#{tableBean.escursione}" />
 					</h:selectOneMenu></td>
 				<td><h:message for="escursione"></h:message></td>
 			</tr>
 			<tr>
-				<td><h:outputLabel for="volo">Volo:</h:outputLabel></td>
-				<td><h:selectOneMenu id="volo" value="#{productInsertBean.product.cod_volo}"> 
+				<td class="celleStrette"><h:outputLabel for="volo">Volo:</h:outputLabel></td>
+				<td><h:selectOneMenu id="volo" value="#{productInsertBean.product.cod_volo}" style=" width : 170px;"> 
 						<f:selectItems value = "#{tableBean.volo}" />
 					</h:selectOneMenu></td>
 				<td><h:message for="volo"></h:message></td>
@@ -45,6 +52,6 @@
 
 		<h:commandButton value="Inserisci prodotto" action="#{productInsertBean.registerPacchetto()}" />
 
-	</h:form>
+	</h:form></div>
 </h:body>
 </html>
