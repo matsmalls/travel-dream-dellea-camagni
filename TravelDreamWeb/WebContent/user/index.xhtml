@@ -6,8 +6,15 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 <title>User's Homepage</title>
+<style type="text/css">
+			
+			@import url("../travel.css");
+			@import url("../user.css");
+    </style>
 </h:head>
 <h:body>
+<ui:include src="../header.xhtml"/>
+		<div id='boxUserContainer'>
 Benvenuto nella tua homepage #{userBean.nome}!
 <br />
 <h:form>
@@ -19,15 +26,14 @@ Benvenuto nella tua homepage #{userBean.nome}!
 <br />
 
 Inserisci il nome o parte del nome del prodotto che vuoi cercare. <br />
-<h:form>
-	<h:inputText id="ricerca" value = "#{searchBean.ricerca}"> 
-		
-	</h:inputText>
-	<br/>
-	<h:commandButton value="Cerca" action="showRicerca" />
-</h:form>
-<h:form>
-	<h:commandButton action="#{logoutBean.logout}" value="Logout" />
-</h:form>
+	<div>
+	<h:form style="width:300px;"><br />
+		<h:inputText id="ricerca" value = "#{searchBean.ricerca}"></h:inputText>
+		<h:commandButton value="Cerca" action="showRicerca" style="margin-left:60px;"/>
+	</h:form>
+	<h:form style="width:100px;margin-left:290px;margin-top:-40px; "><br />
+		<h:commandButton action="#{logoutBean.logout}" value="Logout" />
+	</h:form>
+	</div></div>
 </h:body>
 </html>
