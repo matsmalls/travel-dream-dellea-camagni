@@ -5,15 +5,19 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 <h:head>
 <title>Travel Dream - Ricerca Prodotto</title>
+<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+</style>
 </h:head>
 <body>
-Inserisci il nome o parte del nome del prodotto che vuoi cercare. <br />
-<h:form>
-	<h:inputText id="ricerca" value = "#{searchBean.ricerca}"> 
-		
-	</h:inputText>
-	<br/>
-	<h:commandButton value="Cerca" action="#{searchBean.redirect}" />
-</h:form>
+<ui:include src="../header.xhtml"/>
+  			<div id='boxUserContainer'>
+	Inserisci il nome o parte del nome del prodotto che vuoi cercare. 
+	<h:form style="height:100px;"><br />
+		<h:inputText id="ricerca" value = "#{searchBean.ricerca}"> </h:inputText>
+		<h:commandButton value="Cerca" action="#{searchBean.redirect}" style="margin-left:20px;"/>
+	</h:form>
+	</div>
 </body>
 </html>
