@@ -10,6 +10,8 @@ public class WishlistDTO {
 	
 	private String nameProduct;
 
+	private ProductDTO product;
+	
 	public WishlistDTO(){
 		super();
 	}
@@ -57,5 +59,13 @@ public class WishlistDTO {
 
 	public void setNameProduct(String nameProduct) {
 		this.nameProduct = nameProduct;
+	}
+
+	public ProductDTO getProduct() {
+		return product;
+	}
+
+	public void setProduct(ProductDTO product) {
+		this.product = product;
 	}
 }
