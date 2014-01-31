@@ -36,7 +36,8 @@ public class WishlistMgrBean implements WishlistMgr {
  	   em.persist(newWishlist);
     }
     
-    private String nameProduct(Long id){
+    @Override
+    public String nameProduct(Long id){
     	return em.createQuery(
     	        "SELECT p.nome FROM Product p WHERE p.id = :id", String.class)
     	        .setParameter("id", id).getResultList().get(0);

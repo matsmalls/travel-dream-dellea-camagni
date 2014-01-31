@@ -29,15 +29,15 @@ public class ProductMgrBean implements ProductMgr {
     public void registerEscursione(ProductDTO product){
  	   Product newProduct = new Product(product);
  	   newProduct.setTipo(Tipologia.escursione);
- 	  newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()+" 00:00:00"));
+ 	   newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()+" 00:00:00"));
  	   em.persist(newProduct);
  	   
     }
     
     @Override
-    public String modificaEscursione(ProductDTO product){
-    	
-       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();
+    public String modificaEscursione(Long cod, ProductDTO product){
+       
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :id", Product.class).setParameter("id", cod).getResultList().get(0);
        newProduct.setNome(product.getNome());
        newProduct.setTipo(Tipologia.escursione);
   	   newProduct.setData_arrivo(Timestamp.valueOf(product.getData_arrivo()+" 00:00:00"));
@@ -59,8 +59,9 @@ public class ProductMgrBean implements ProductMgr {
     }
     
     @Override
-    public String modificaVolo(ProductDTO product){
-       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();       newProduct.setTipo(Tipologia.volo);
+    public String modificaVolo(Long cod, ProductDTO product){
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :id", Product.class).setParameter("id", cod).getResultList().get(0);       
+       newProduct.setTipo(Tipologia.volo);
        newProduct.setNome(product.getNome());
        newProduct.setDescrizione(product.getDescrizione());
   	   newProduct.setPrezzo(product.getPrezzo());
@@ -90,8 +91,8 @@ public class ProductMgrBean implements ProductMgr {
     }
     
     @Override
-    public String modificaSoggiorno(ProductDTO product){
-       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();       
+    public String modificaSoggiorno(Long cod, ProductDTO product){
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :id", Product.class).setParameter("id", cod).getResultList().get(0);       
        newProduct.setTipo(Tipologia.soggiorno);
        newProduct.setNome(product.getNome());
        newProduct.setDescrizione(product.getDescrizione());
@@ -119,8 +120,9 @@ public class ProductMgrBean implements ProductMgr {
     }
     
     @Override
-    public String modificaPacchetto(ProductDTO product){
-       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :pId", Product.class).setParameter("pId", product.getId()).getSingleResult();       newProduct.setTipo(Tipologia.pacchetto);
+    public String modificaPacchetto(Long cod, ProductDTO product){
+       Product newProduct = em.createQuery("SELECT p FROM Product p WHERE p.id = :id", Product.class).setParameter("id", cod).getResultList().get(0);
+       newProduct.setTipo(Tipologia.pacchetto);
  	   newProduct.setNome(product.getNome());
  	   newProduct.setPrezzo(product.getPrezzo());
  	   newProduct.setCod_escursione(product.getCod_escursione());
