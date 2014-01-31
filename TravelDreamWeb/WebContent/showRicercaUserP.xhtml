@@ -12,7 +12,7 @@
     </style>
 </h:head>
 <h:body>
-	<ui:include src="header.xhtml" />
+	<ui:include src="headerIndex.xhtml" />
 	<div id='boxUserContainer' style=" height : 295px;">
 				<br /><br /><br />
 				<h:form>
@@ -29,7 +29,7 @@
                         <h:outputText value="Nome Prodotto"/>
                     </f:facet>
                     <h:commandLink
-                    			   action = "registration"
+                    			   action = "prodottoPacchetto"
                                    value="#{productDTO.nome}">
                         <f:setPropertyActionListener target="#{wishlistBean.id}" 
                                                      value="#{productDTO.id}"/>

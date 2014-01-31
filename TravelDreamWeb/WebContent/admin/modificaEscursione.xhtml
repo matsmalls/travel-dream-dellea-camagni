@@ -5,8 +5,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 <h:head>
 <title>Travel Dream - Modifica Escursione</title>
+<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+    	</style>
 </h:head>
 <h:body>
+<ui:include src="headerAdmin.xhtml"/>
+<div id='boxUserContainer'>
 	Inserisci i dettagli dell'escursione.
 	<h:form>
 		<h:panelGrid columns="3" id = "regGrid">
@@ -45,5 +51,6 @@
 		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaEscursione}" />
 		 
 	</h:form>
+	</div>
 </h:body>
 </html>

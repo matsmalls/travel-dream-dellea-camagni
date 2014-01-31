@@ -7,10 +7,29 @@
 
 <h:head>
 	<title>Login</title>
-
+<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+</style>
 </h:head>
 <h:body>
-    	
+<div id='landmark'>		
+			<h:form>	
+				<div id='linkContainer'><li><a href="../index.xhtml">Home</a></li></div>
+			  	<div id='linkContainer'><li>
+			  		<h:link outcome="../admin/index.xhtml"  value="Login amministratori"></h:link>
+				</li></div>
+				<div id='linkContainer'><li><h:link outcome="../user/index?user=true"  value="Login utenti"></h:link></li></div>
+			
+				
+			</h:form>
+		</div>
+		
+		<div id='logoContainer'>
+			<img src='../images/company-logo.jpg' width="180" height="150" />
+		</div>
+
+    <div id='boxUserContainer'>
 	<form name="loginForm" method="post" action="j_security_check">
 	Username: <input type="text" name="j_username" />
 	Password: <input type="password" name="j_password" />
@@ -20,6 +39,6 @@
 	<h:form rendered = "#{param['user']}">
 		<h:link value = "Register" outcome = "registration" />
 	</h:form>	
-	
+	</div>
 </h:body>
 </html>
