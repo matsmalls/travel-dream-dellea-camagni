@@ -23,19 +23,7 @@ Prezzo: #{wishlistBean.product.prezzo}.
 Descrizione : #{wishlistBean.product.descrizione}.
 
 <br /><br />
-		<h:form rendered = "#{param['ricerca']}" style="width:140px; height:30px">
-			<h:commandButton id="modifica"
-                     action = "#{wishlistBean.modifica()}" 
-                     value="Modifica Pacchetto">
-    		</h:commandButton>
-		</h:form>
-		<br />
-		<h:form style="width:140px; height:30px">
-			<h:commandButton id="add"
-                     action = "#{wishlistBean.save()}" 
-                     value="Aggiungi in wishlist">
-    		</h:commandButton>
-		</h:form>
+		
 	</div>
 </h:body>
 </html>

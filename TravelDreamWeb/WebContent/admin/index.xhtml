@@ -6,17 +6,25 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 <title>Admin's Homepage</title>
+		<style type="text/css">
+			@import url("../travel.css");
+			@import url("../user.css");
+    	</style>
+
 </h:head>
 <h:body>
+<ui:include src="headerAdmin.xhtml"/>
+<div id='boxUserContainer'>
 Benvenuto nella tua homepage #{userBean.nome}!
 <br/>
+<h:form>
 <h:link outcome="insertProduct.xhtml"  value="Inserisci un nuovo prodotto" /> 
 <br/>
-<h:link outcome="productList.xhtml"  value="Visualizza i prodotti in database" /> 
+<h:link outcome="productList.xhtml"  value="Visualizza prodotti in database" /> 
 <br/>
 <h:link outcome="insertAdmin.xhtml"  value="Registra un nuovo impiegato" /> 
-<h:form>
+
 	<h:commandButton action="#{logoutBean.logout}" value="Logout" />
-</h:form>
+</h:form></div>
 </h:body>
 </html>

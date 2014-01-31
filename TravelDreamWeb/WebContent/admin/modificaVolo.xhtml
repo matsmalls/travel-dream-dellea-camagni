@@ -45,9 +45,14 @@
 				<td><h:inputText id="aerop_ritorno" value="#{productInsertBean.product.aerop_ritorno}" /></td>
 				<td><h:message for="aerop_ritorno"></h:message></td>
 			</tr>
+			<tr>
+				<td><h:outputLabel for="cod">Inserire codice sicurezza:  #{productInsertBean.product.id}</h:outputLabel></td>
+				<td><h:inputText id="cod" value="#{productInsertBean.id}" /></td>
+				<td><h:message for="cod"></h:message></td>
+			</tr>
 		</h:panelGrid>
 
-		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaVolo()}" />
+		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaVolo}" />
 
 	</h:form>
 </h:body>

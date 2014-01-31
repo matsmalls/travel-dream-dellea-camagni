@@ -41,9 +41,15 @@
 					</h:selectOneMenu></td>
 				<td><h:message for="volo"></h:message></td>
 			</tr>
+			<tr>
+				<td><h:outputLabel for="cod">Inserire codice sicurezza:  #{productInsertBean.product.id}</h:outputLabel></td>
+				<td><h:inputText id="cod" value="#{productInsertBean.id}" /></td>
+				<td><h:message for="cod"></h:message></td>
+			</tr>
 		</h:panelGrid>
 
-		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaPacchetto()}" />
+		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaPacchetto}" />
+		 
 
 	</h:form>
 </h:body>

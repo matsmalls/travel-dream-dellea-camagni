@@ -7,37 +7,19 @@
 
 <h:head>
 	<title>Login</title>
-	<style type="text/css">
-			@import url("travel.css");
-			@import url("user.css");
-    </style>
+
 </h:head>
 <h:body>
-	<ui:include src="header.xhtml" />
-		<div id='boxUserImageBackground'>
-  			<br /><br /><br />
-			<h:form name="loginForm" method="post" action="j_security_check">
-				<h:panelGrid columns="1"  id = "regGrid" >
-					<tr>
-						<td>Username:</td>
-						<td><input type="text" name="j_username" /></td>
-						<td style="width: 10px;"></td>
-						<td>Password:</td>
-						<td><input type="password" name="j_password"/></td>
-						<td style="width: 20px;"></td>
-						<td><input type="submit" value="login" /></td>
-						<td style="width: 20px;"></td>
-						<td><input type="reset" value="reset" /></td>
-					</tr>
+    	
+	<form name="loginForm" method="post" action="j_security_check">
+	Username: <input type="text" name="j_username" />
+	Password: <input type="password" name="j_password" />
+	<input type="submit" value="login" />
+	<input type="reset" value="reset" />
+	</form>
+	<h:form rendered = "#{param['user']}">
+		<h:link value = "Register" outcome = "registration" />
+	</h:form>	
 	
-				</h:panelGrid>
-				
-			
-			</h:form>
-		</div>
-		<h:form rendered = "#{param['user']}" style="margin-left:195px; margin-top:40px;">
-			<h:link value = "Register" outcome = "registration" />
-		</h:form>	
-		
 </h:body>
 </html>

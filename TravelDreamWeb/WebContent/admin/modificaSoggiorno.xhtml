@@ -40,9 +40,14 @@
 				<td><h:inputText id="luogo" value="#{productInsertBean.product.luogo}" /></td>
 				<td><h:message for="luogo"></h:message></td>
 			</tr>
+			<tr>
+				<td><h:outputLabel for="cod">Inserire codice sicurezza:  #{productInsertBean.product.id}</h:outputLabel></td>
+				<td><h:inputText id="cod" value="#{productInsertBean.id}" /></td>
+				<td><h:message for="cod"></h:message></td>
+			</tr>
 		</h:panelGrid>
 
-		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaSoggiorno()}" />
+		<h:commandButton value="Modifica prodotto" action="#{productInsertBean.modificaSoggiorno}" />
 
 	</h:form>
 </h:body>

@@ -5,7 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<title>Dettagli Prodotto - Pacchetto</title>
+<title>Dettagli Prodotto - Soggiorno</title>
 <style type="text/css">
 			@import url("../travel.css");
 			@import url("../user.css");
@@ -16,26 +16,18 @@
   			<div id='boxUserContainer'>
 Nome prodotto: #{wishlistBean.product.nome}.
 <br /><br />
-Tipo Prodotto: Pacchetto
+Tipo Prodotto: Soggiorno
 <br /><br />
 Prezzo: #{wishlistBean.product.prezzo}.
 <br /><br />
-Descrizione : #{wishlistBean.product.descrizione}.
-
+Data arrivo: #{wishlistBean.product.data_arrivo}.
 <br /><br />
-		<h:form rendered = "#{param['ricerca']}" style="width:140px; height:30px">
-			<h:commandButton id="modifica"
-                     action = "#{wishlistBean.modifica()}" 
-                     value="Modifica Pacchetto">
-    		</h:commandButton>
-		</h:form>
-		<br />
-		<h:form style="width:140px; height:30px">
-			<h:commandButton id="add"
-                     action = "#{wishlistBean.save()}" 
-                     value="Aggiungi in wishlist">
-    		</h:commandButton>
-		</h:form>
-	</div>
+Data partenza: #{wishlistBean.product.data_partenza}.
+<br /><br />
+Luogo: #{wishlistBean.product.luogo}.
+<br /><br />
+Descrizione: #{wishlistBean.product.descrizione}.
+<br /><br />
+</div>
 </h:body>
 </html>

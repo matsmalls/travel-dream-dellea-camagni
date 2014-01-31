@@ -6,8 +6,15 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 <title>Ricerca</title>
+<style type="text/css">
+			
+			@import url("../travel.css");
+			@import url("../user.css");
+    </style>
 </h:head>
 <h:body>
+<ui:include src="../header.xhtml"/>
+		<div id='boxUserContainer'>
 <h:form>
 <h:dataTable id="products"
                          value="#{tableBean.wishlistDTO}"
@@ -23,7 +30,7 @@
                         <h:outputText value="Nome Prodotto"/>
                     </f:facet>
                     <h:commandLink
-                    			   action = "#{wishlistBean.redirect}"
+                    			   action = "#{wishlistBean.redirectWishlist}"
                                    value="#{wishlistDTO.nameProduct}">
                         <f:setPropertyActionListener target="#{wishlistBean.product.nome}" 
                                                      value="#{wishlistDTO.nameProduct}"/>
@@ -47,5 +54,6 @@
             </h:dataTable>
                                 
             </h:form>
+            </div>
            </h:body>
 </html>

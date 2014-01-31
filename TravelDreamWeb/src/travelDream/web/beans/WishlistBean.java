@@ -54,7 +54,7 @@ public class WishlistBean {
 		wishlist.setIdProduct(id);
 		wishlist.setUser(usrMgr.getUserDTO().getUserId());
 		wishlistMgr.save(wishlist);
-		return "confermaPacchetto";
+		return "confermaProdotto";
 	}
 	
 	
@@ -81,7 +81,7 @@ public class WishlistBean {
 	
 	public Integer prezzo(){
 		Integer value = productMgr.calcolaPrezzo(productMgr.findPrezzo(productDTO.getCod_escursione()), productMgr.findPrezzo(productDTO.getCod_volo()), productMgr.findPrezzo(productDTO.getCod_soggiorno()));
-		String valore = value.toString();
+		productDTO.setPrezzo(value);
 		return value;
 	}
 	
@@ -101,6 +101,18 @@ public class WishlistBean {
 		return "prodotto";
 	}
 
+	public String redirectWishlist(){
+		if(tipo == "volo")
+			return "prodottoVoloW";
+		if(tipo == "soggiorno")
+			return "prodottoSoggiornoW";
+		if(tipo == "escursione")
+			return "prodottoEscursioneW";
+		if(tipo == "pacchetto")
+			return "prodottoPacchettoW";
+		return "prodotto";
+	}
+	
 	public String getTipo() {
 		return tipo;
 	}

@@ -16,11 +16,19 @@
   			<div id='boxUserContainer'>
 Nome prodotto: #{wishlistBean.product.nome}.
 <br /><br />
-Id Prodotto: #{wishlistBean.id}.
-<br /><br />
 Tipo Prodotto: Soggiorno
 <br /><br />
-<h:form>
+Prezzo: #{wishlistBean.product.prezzo}.
+<br /><br />
+Data arrivo: #{wishlistBean.product.data_arrivo}.
+<br /><br />
+Data partenza: #{wishlistBean.product.data_partenza}.
+<br /><br />
+Luogo: #{wishlistBean.product.luogo}.
+<br /><br />
+Descrizione: #{wishlistBean.product.descrizione}.
+<br /><br />
+<h:form >
 <h:commandButton id="add"
                  action = "#{wishlistBean.save()}" 
                  value="Aggiungi in wishlist">

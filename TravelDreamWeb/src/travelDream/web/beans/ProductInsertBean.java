@@ -17,6 +17,7 @@ public class ProductInsertBean {
 		
 		private ProductDTO product;
 		
+		public static String id;
 		
 		public ProductInsertBean(){
 			product = new ProductDTO();
@@ -24,6 +25,10 @@ public class ProductInsertBean {
 		
 		public ProductDTO getProduct(){
 			return this.product;
+		}
+		
+		public Long getProductId(){
+			return this.product.getId();
 		}
 		
 		public void setProduct(ProductDTO product){
@@ -36,22 +41,22 @@ public class ProductInsertBean {
 		}
 		
 		public String modificaVolo(){
-			productMgr.modificaVolo(product);
+			productMgr.modificaVolo(new Long(id), product);
 			return "index";
 		}
 		
 		public String modificaPacchetto(){
-			productMgr.modificaPacchetto(product);
+			productMgr.modificaPacchetto(new Long(id), product);
 			return "index";
 		}
 		
 		public String modificaEscursione(){
-			productMgr.modificaEscursione(product);
+			productMgr.modificaEscursione(new Long(id), product);
 			return "index";
 		}
 		
 		public String modificaSoggiorno(){
-			productMgr.modificaSoggiorno(product);
+			productMgr.modificaSoggiorno(new Long(id), product);
 			return "index";
 		}
 		
@@ -83,6 +88,14 @@ public class ProductInsertBean {
 	 	   if (product.getTipo() == "soggiorno")
 				   return "modificaSoggiorno";
 	 	   return "modificaPacchetto";
+		}
+
+		public String getId() {
+			return id;
+		}
+
+		public void setId(String idw) {
+			id = idw;
 		}
 
 		

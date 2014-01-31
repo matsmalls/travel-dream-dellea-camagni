@@ -12,19 +12,16 @@
 			<h:form>	
 				<div id='linkContainer'><li><a href="index.xhtml">Home</a></li></div>
 			  	<div id='linkContainer'><li>
-			  		<h:commandLink value="Modifica Profilo" action="modificaProfilo"  >
-						<f:setPropertyActionListener target="#{registerBean.user}" 
-                             value="#{registerBean.findUser()}"/>
-					</h:commandLink>
+			  		<h:link outcome="admin/index.xhtml"  value="Login amministratori"></h:link>
 				</li></div>
-				<div id='linkContainer'><li><h:commandLink value="Visualizza Wishing List" action="wishlist"  /></li></div>
-				<div id='linkContainer'><li><a href="ricerca.xhtml">Ricerca</a></li></div>
+				<div id='linkContainer'><li><h:link outcome="user/index?user=true"  value="Login utenti"></h:link></li></div>
+			
 				
 			</h:form>
 		</div>
 		
 		<div id='logoContainer'>
-			<img src='../images/company-logo.jpg' width="180" height="150" />
+			<img src='images/company-logo.jpg' width="180" height="150" />
 		</div>
 
 </h:body>

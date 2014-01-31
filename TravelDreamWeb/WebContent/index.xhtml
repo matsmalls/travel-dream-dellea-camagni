@@ -7,58 +7,29 @@
 		<title>Travel Dream</title>
 		<style type="text/css">
 			@import url("travel.css");
+			@import url("user.css");
     	</style>
 	</h:head>
 
 	<h:body>
 
-		<div>
+	<ui:include src="headerIndex.xhtml" />
 		
-			<div id='landmark'>			
-			  	<div id='linkContainer'>
-			  		<li><a href="">Pacchetti</a></li>
-				</div>
-				<div id='linkContainer'>
-					<li><a href="">Prodotti</a></li>
-				</div>
-				<div id='linkContainer'>
-					<li><a href="">Wishing-List</a></li>
-				</div>
-				<div id='linkContainer'>
-			  		<li><a href="">Carrello</a></li>
-				</div>
-				<div id='linkContainer'>
-			  		<li><a href="">Contatti</a></li>
-				</div>
-				<div id='linkContainer'>
-			  		<li><a href="">Chi Siamo</a></li>
-				</div>		
-			</div>
-  	
-  	
-  	
-			<div id='logoContainer'>
-				<img src="images\koala.jpg" width="180" height="150" />
-			</div>
-  	
-  			<div id='headerContainer'>
+				<div id='boxUserContainer'>
   				Inserisci il codice del pacchetto che sei stato invitato a visualizzare! <br />
+		
 			<h:form>
+				<br />
 				<h:inputText id="ricerca" value = "#{searchBean.ricerca}"> 
 		
 				</h:inputText>
-				<br/>
-					<h:commandButton value="Cerca" action="showRicercaUserP" />
-				<br />
-					
+					<h:commandButton value="Cerca" action="showRicercaUserP" style="margin-left:145px;"/>
 				</h:form>
 
-  			</div>
   			
-			<h:link outcome="admin/index.xhtml"  value="Login amministratori"></h:link>
-			<br />
-			<h:link outcome="user/index?user=true"  value="Login utenti"></h:link>
-		</div>
+			
+			</div>
+	
 
 
 	</h:body>
