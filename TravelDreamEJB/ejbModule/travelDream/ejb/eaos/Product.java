@@ -57,6 +57,12 @@ public class Product{
 		local.setPrezzo(product.getPrezzo());
 		local.setTipo(product.getTipo().name());
 		local.setDescrizione(product.getDescrizione());
+		if(product.getData_arrivo()!=null){
+			local.setData_arrivo(product.getData_arrivo().toString());
+		}
+		if(product.getData_partenza()!=null){
+			local.setData_partenza(product.getData_partenza().toString());
+		}
 		local.setAerop_andata(product.getAerop_andata());
 		local.setAerop_ritorno(product.getAerop_ritorno());
 		local.setLuogo(product.getLuogo());
