@@ -37,11 +37,11 @@ public interface ProductMgr {
 
 	public void elimina(ProductDTO product);
 	
-	public String modificaSoggiorno(ProductDTO product);
+	public String modificaSoggiorno(Long cod, ProductDTO product);
 	
-	public String modificaVolo(ProductDTO product);
+	public String modificaVolo(Long cod, ProductDTO product);
 	
-	public String modificaEscursione(ProductDTO product);
+	public String modificaEscursione(Long cod, ProductDTO product);
 	
-	public String modificaPacchetto(ProductDTO product);
+	public String modificaPacchetto(Long cod, ProductDTO product);
 }

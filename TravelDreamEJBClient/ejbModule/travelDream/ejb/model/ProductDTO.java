@@ -24,7 +24,6 @@ public class ProductDTO {
 	private Long cod_soggiorno;
 	private Long cod_escursione;
 	
-	
 	public Long getId() {
 		return id;
 	}
