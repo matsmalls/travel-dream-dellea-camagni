@@ -26,12 +26,13 @@ public class Wishlist {
 		return wishlist.getIdProduct();
 	}
 	
-	public static WishlistDTO convertToDTO(Wishlist wishlist, String nameProduct){
+	public static WishlistDTO convertToDTO(Wishlist wishlist, String nameProduct, Product product){
 		WishlistDTO local = new WishlistDTO();
 		local.setId(wishlist.getId());
 		local.setUser(wishlist.getUser());
 		local.setIdProduct(wishlist.getIdProduct());
 		local.setNameProduct(nameProduct);
+		local.setProduct(Product.convertToDTO(product));
 		return local;
 	}
 	

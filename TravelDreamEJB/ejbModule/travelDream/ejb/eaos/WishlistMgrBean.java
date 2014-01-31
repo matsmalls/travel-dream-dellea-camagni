@@ -44,6 +44,12 @@ public class WishlistMgrBean implements WishlistMgr {
     	        
     }
     
+    public Product product(Long id){
+    	return em.createQuery(
+    	        "SELECT p FROM Product p WHERE p.id = :id", Product.class)
+    	        .setParameter("id", id).getResultList().get(0);
+    }
+    
     @Override
     public void elimina(WishlistDTO wishlist){
     	Wishlist newWishlist = em.find(Wishlist.class, wishlist.getId());
@@ -62,7 +68,7 @@ public class WishlistMgrBean implements WishlistMgr {
     	        .getResultList();
     	List<WishlistDTO> local = new ArrayList<WishlistDTO>();
     	for(int i = 0; i<tmp.size(); i++){
-    		local.add(Wishlist.convertToDTO(tmp.get(i), nameProduct(tmpId.get(i))));
+    		local.add(Wishlist.convertToDTO(tmp.get(i), nameProduct(tmpId.get(i)), product(tmpId.get(i))));
     	}
     	return local;
     }
