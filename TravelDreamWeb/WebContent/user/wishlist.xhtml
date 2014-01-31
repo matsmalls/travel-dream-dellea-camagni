@@ -30,10 +30,12 @@
                         <h:outputText value="Nome Prodotto"/>
                     </f:facet>
                     <h:commandLink
-                    			   action = "#{wishlistBean.redirectWishlist}"
+                    			   action = "#{wishlistBean.redirectWishlist()}"
                                    value="#{wishlistDTO.nameProduct}">
-                        <f:setPropertyActionListener target="#{wishlistBean.product.nome}" 
-                                                     value="#{wishlistDTO.nameProduct}"/>
+                        <f:setPropertyActionListener target="#{wishlistBean.tipo}" 
+                                                     value="#{wishlistDTO.product.tipo}"/>
+                        <f:setPropertyActionListener target="#{wishlistBean.product}" 
+                                                     value="#{wishlistDTO.product}"/>
                                                      
                     </h:commandLink>
                 </h:column>

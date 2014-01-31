@@ -110,7 +110,7 @@ public class WishlistBean {
 			return "prodottoEscursioneW";
 		if(tipo == "pacchetto")
 			return "prodottoPacchettoW";
-		return "prodotto";
+			return "prodottoPacchettoW";
 	}
 	
 	public String getTipo() {

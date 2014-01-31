@@ -56,6 +56,8 @@
 		<h:commandButton value="Inserisci in wishlist!" action="#{wishlistBean.modificaPacchetto()}">
 		<f:setPropertyActionListener target="#{wishlistBean.id}" 
                                      value="#{wishlistBean.getUserPId()}"/>
+        <f:setPropertyActionListener target="#{wishlistBean.product.prezzo}" 
+                                     value="#{wishlistBean.prezzo()}"/>
         
 		</h:commandButton>
 
